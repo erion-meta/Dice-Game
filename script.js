@@ -37,6 +37,10 @@ const holdScoreBtn = document.querySelector(".btn--hold");
 // Field elemnets
 const diceEl = document.querySelector(".dice");
 
+// Starting conditions
+let scoresArr, activePlayer, currentScore, playing;
+init(); // Init function called in start of the game
+
 // Rules Functions
 function openRules() {
   // Open rules function
@@ -65,15 +69,17 @@ function closeNameInput() {
 namePlayersBtn.addEventListener("click", openNameInput);
 closeInput.addEventListener("click", closeNameInput);
 overlay.addEventListener("click", closeNameInput);
+submit.addEventListener("click", () => {
+  closeNameInput();
+  namePlayer0.textContent = palyer1Input.value;
+  namePlayer1.textContent = palyer2Input.value;
+  namePlayersBtn.classList.add("hidden");
+});
 
 //Rules btn events
 rulesBtn.addEventListener("click", openRules);
 closeRulesBtn.addEventListener("click", closeRules);
 overlay.addEventListener("click", closeRules);
-
-// Starting conditions
-let scoresArr, activePlayer, currentScore, playing;
-init();
 
 // Init function
 function init() {
@@ -156,13 +162,6 @@ holdScoreBtn.addEventListener("click", function () {
 
 // New Game btn
 newGameBtn.addEventListener("click", init);
-
-submit.addEventListener("click", () => {
-  closeNameInput();
-  namePlayer0.textContent = palyer1Input.value;
-  namePlayer1.textContent = palyer2Input.value;
-  namePlayersBtn.classList.add("hidden");
-});
 
 resetGame.addEventListener("click", () => {
   init();
