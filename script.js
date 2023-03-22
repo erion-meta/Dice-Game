@@ -70,3 +70,26 @@ overlay.addEventListener("click", closeNameInput);
 rulesBtn.addEventListener("click", openRules);
 closeRulesBtn.addEventListener("click", closeRules);
 overlay.addEventListener("click", closeRules);
+
+// Starting conditions
+let scoresArr, activePlayer, currentScore, playing;
+init();
+
+// Init function
+function init() {
+  scoresArr = [0, 0];
+  activePlayer = 0;
+  currentScore = 0;
+  playing = true;
+
+  currentScore0.textContent = 0;
+  currentScore1.textContent = 0;
+  scorePlayer1.textContent = 0;
+  scorePlayer0.textContent = 0;
+
+  diceEl.classList.add("hidden");
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+}
