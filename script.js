@@ -153,3 +153,20 @@ holdScoreBtn.addEventListener("click", function () {
     }
   }
 });
+
+// New Game btn
+newGameBtn.addEventListener("click", init);
+
+submit.addEventListener("click", () => {
+  closeNameInput();
+  namePlayer0.textContent = palyer1Input.value;
+  namePlayer1.textContent = palyer2Input.value;
+  namePlayersBtn.classList.add("hidden");
+});
+
+resetGame.addEventListener("click", () => {
+  init();
+  namePlayer0.textContent = "Player 1";
+  namePlayer1.textContent = "Player 2";
+  namePlayersBtn.classList.remove("hidden");
+});
