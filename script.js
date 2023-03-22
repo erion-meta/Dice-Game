@@ -36,3 +36,37 @@ const holdScoreBtn = document.querySelector(".btn--hold");
 
 // Field elemnets
 const diceEl = document.querySelector(".dice");
+
+// Rules Functions
+function openRules() {
+  // Open rules function
+  rules.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+// Close rules function
+function closeRules() {
+  rules.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+// Name INPUT
+function openNameInput() {
+  // Open name input function
+  nameInput.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+// Close rules function
+function closeNameInput() {
+  nameInput.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+// Input btn Events
+namePlayersBtn.addEventListener("click", openNameInput);
+closeInput.addEventListener("click", closeNameInput);
+overlay.addEventListener("click", closeNameInput);
+
+//Rules btn events
+rulesBtn.addEventListener("click", openRules);
+closeRulesBtn.addEventListener("click", closeRules);
+overlay.addEventListener("click", closeRules);
